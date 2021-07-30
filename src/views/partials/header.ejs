@@ -1,0 +1,65 @@
+<header>
+    <section class="search-logo-container">
+        <article class="cart-heart">
+            <div class="cart-box">
+                <a href="/products/productCart"><i class="fas fa-shopping-cart cart"></i></a>
+                <span class="cant">4</span>
+            </div>
+            <div class="fav-box">
+                <a href="/#populares"><i class="fas fa-heart heart"></i></a>
+            </div>
+        </article>
+
+        <article class="logo-container">
+            <a href="/">
+                <div class="logo-box-normal">
+                    <img src="/images/logo1.gif" alt="Logo Peritroopers" width="250">
+                </div>
+                <div class="logo-box-reduced">
+                    <img src="/images/logo-cortado.gif" alt="Logo Peritroopers" width="120">
+                </div>
+            </a>
+        </article>
+
+        <article class="search-container">
+            <div class="search-box">
+                <form action="" class="cuadro-busqueda" method="GET" target="_blank">
+                    <input type="search" placeholder="¿Qué estás buscando?" size="30px" class="casillero">
+                </form>
+            </div>
+            <div class="icon-box">
+                <a href="/">
+                    <i class="fas fa-search"></i>
+                </a>   
+            </div>
+        </article>
+
+        <div class="burger-container">
+            <span class="burger-menu">
+            <a href=""><i class="fa fa-bars burger"></i></a>
+        </span>
+        </div>
+
+        <nav class="nav-bar">
+            <ul type="none" class="barra-nav1">
+                <li class="secciones"><a href="/">Home</a></li>
+                <li class="secciones"><a href="#">Catálogo</a></li>
+                <% if(locals.isLogged){ %>
+                    <li><a href="/users/profile">My profile</a></li>
+                    <li><a href="/users/logout">Logout</a></li>
+                    <li><a href="#"><img src="/../images/avatars/<%= userLogged.avatar %>" alt="" class="user-avatar"><!--Hi <%= locals.userLogged.name%>--></a></li>
+                    <!--<li class="secciones"><a href="/products/create">Crear Producto</a></li>-->
+                    <% }else{ %>
+                        <li class="secciones"><a href="/users/register">Creá tu cuenta</a></li>
+                        <li class="secciones"><a href="/users/login">Ingresá</a></li>
+                    <% } %>
+                <% if(locals.isLogged && userLogged.userCategoryId != 2) { %>
+                    <li class="secciones"><a href="/products/create">Crear Producto</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </section>
+    <a href="https://api.whatsapp.com/send?phone=5495508107&text=Hola%21%20Quisiera%20hacer%20una%20consulta." class="float" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+</header>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <main class="main-register">
+                <section class="register">
+                    <h2>Editar Usuario</h2>
+                    <form class="register-form" action="/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <div class="regform-outofthebox">
+                            <div class="contenedor-regform name">
+                                <label class="labelName" id="labelName">Nombre</label>
+                                <input 
+                                    type="text"
+                                    class="inputName <%= locals && locals.errors && errors.name?'error-input':null %>"
+                                    name="name"
+                                    placeholder="Cosme"
+                                    value="<%= user.name %>"
+                                >
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.name && errors.name.msg %>
+                                    </div>
+
+                            </div>
+                            <div class="contenedor-regform lastName">
+                                <label class="labelLastName" id="labelLastName">Apellido</label>
+                                <input
+                                    type="text"
+                                    class="inputLastName <%= locals && locals.errors && errors.lastName?'is-invalid':null %>"
+                                    name="lastName"
+                                    placeholder="Fulanito"
+                                    value="<%= user.lastName %>"
+                                >
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.lastName && errors.lastName.msg %>
+                                    </div>
+                            </div>
+
+                            <div class="contenedor-regform address">
+                                <label class="labelAddress" id="labelAddress">Dirección</label>
+                                <input
+                                    type="text"
+                                    class="inputAddress <%= locals && locals.errors && errors.address?'is-invalid':null %>"
+                                    name="address"
+                                    placeholder="Dirección"
+                                    value="<%= user.address %>"
+                                >
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.address && errors.address.msg %>
+                                    </div>
+                            </div>
+
+                            <div class="contenedor-regform">
+                                <label class="labelAvatar">Imágen de Perfil</label>
+                                <input type="file" class="inputAvatar" name="avatar">
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.avatar && errors.avatar.msg %>
+                                    </div>
+                                <input type="hidden" name="oldImage" id="image" value="<%= user.image %>">
+                            </div>
+                        </div>                  
+
+                        <div class="reg-button">
+                            <div class="send-box">
+                                <button type="submit" class="send-button">Actualizar Datos</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </main>
+            <%- include('partials/footer') %>
+            <script src="/js/validation-register.js"></script>
+    </body>
+
+</html>

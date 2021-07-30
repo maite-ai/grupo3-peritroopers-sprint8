@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <form action="/products/create" method="POST" class="creation" enctype="multipart/form-data">
+            <label for="" class="edits-2" id="prod-name">Nombre del Producto:</label>
+            <input
+                type="text" 
+                name="name" 
+                id="name" 
+                class="edits <%= locals && locals.errors && errors.name?'error-input': null %>"
+                value="<%= locals.oldData?oldData.name:null %>"
+            >
+                <div class="error-input">
+                    <%= locals && locals.errors && errors.name.msg %>
+                </div>
+    
+            <label for="" class="edits-2">Descripción:</label>
+            <textarea
+                name="description" 
+                id="description"
+                cols="30"
+                rows="10" 
+                class="edits <%= locals && locals.errors && errors.description?'error-input': null %>"
+            ><%=locals.oldData?oldData.description:null%></textarea>
+                <div class="error-input">
+                    <%= locals && locals.errors && errors.description && errors.description.msg %>
+                </div>
+
+            <label for="" class="edits-2">Imágen:</label>
+            <input
+                type="file" 
+                name="image" 
+                id="image"
+                class= "<%= locals && locals.errors && errors.image?'error-input':null %>"
+                value="<%= locals.oldData?oldData.image:null %>"
+            >
+                <div>
+                    <%= locals && locals.errors && errors.image && errors.image.msg %>
+                </div>
+
+            <label for="" class="edits-2">Categoría:</label>
+            <select name="categoryId" id="category" class="edits">
+                <option value=3>Auriculares</option>
+                <option value=1>Micrófonos</option>
+                <option value=4>Mouse</option>
+                <option value=2>Teclados</option>
+            </select>
+
+            <label for="" class="edits-2">Color:</label>
+            <select name="colorId" id="color" class="edits">
+                <option value=5>Azul</option>
+                <option value=2>Blanco</option>
+                <option value=6>Celeste</option>
+                <option value=3>Negro</option>
+                <option value=1>Rojo</option>
+                <option value=7>Rosa</option>
+                <option value=4>Verde</option>
+                <option value=8>Violeta</option>
+            </select>
+
+            <label for="" class="edits-2">Marca:</label>
+            <select name="brandId" id="brand" class="edits">
+                <option value=7>Blue</option>
+                <option value=3>Corsair</option>
+                <option value=4>HyperX</option>
+                <option value=1>Logitech</option>
+                <option value=5>Razer</option>
+                <option value=2>Redragon</option>
+                <option value=6>Shure</option>
+            </select>
+
+            <label for="" class="edits-2">Stock:</label>
+            <input type="input" 
+            name="stock" 
+            id="stock" 
+            class="edits <%= locals && locals.errors && errors.stock?'error-input':null %>"
+            value="<%= locals.oldData?oldData.stock:null %>">
+                <div>
+                    <%= locals && locals.errors && errors.stock && errors.stock.msg %>
+                </div>
+ 
+            <label for="" class="edits-2">Precio:</label>
+            <input
+                type="input" 
+                name="price" 
+                id="price" 
+                placeholder=" $ 5.457,45"
+                class="edits <%= locals && locals.errors && errors.price?'error-input': null %>"
+                value="<%= locals.oldData?oldData.price:null %>">
+                <div>
+                    <%= locals && locals.errors && errors.price && errors.price.msg %>
+                </div>
+
+            <div class="create-button">
+                <button type="submit" id="create-button" class="send-button">Añadir a Catálogo</button>
+            </div> 
+        </form>
+    </main>
+    <%- include('partials/footer') %>
+    <script src="/js/validation-product.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <main class="main-register">
+                <section class="register">
+                    <h2>REGISTRO</h2>
+                    <form class="register-form" id="register-form" action="/users/register" method="POST" enctype="multipart/form-data">
+                        <div class="regform-outofthebox">
+                            <div class="contenedor-regform name">
+                                <label class="labelName" id="labelName">Nombre</label>
+                                <input 
+                                    type="text"
+                                    class="inputName <%= locals && locals.errors && errors.name?'error-input':null %>"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Cosme"
+                                    value="<%= locals && locals.oldData?oldData.name:null %>"
+                                    autofocus
+                                    >
+                    
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.name && errors.name.msg %>
+                                </div>
+                            </div>
+                            <div class="contenedor-regform lastName">
+                                <label class="labelLastName" id="labelLastName">Apellido</label>
+                                <input
+                                    type="text"
+                                    class="inputLastName <%= locals && locals.errors && errors.lastName?'error-input':null %>"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Fulanito"
+                                    value="<%= locals && locals.oldData?oldData.lastName:null %>"
+                                    autofocus
+                                >
+                               
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.lastName && errors.lastName.msg %>
+                                </div>
+                            </div>
+                            <div class="contenedor-regform age">
+                                <label class="labelAge" id="labelAge">Fecha de Nacimiento</label>
+                                <input
+                                    type="date"
+                                    class="inputAge <%= locals && locals.errors && errors.birthDate?'error-input':null %>"
+                                    id="birthDate"
+                                    name="birthDate"
+                                    placeholder="Fecha de Nacimiento"
+                                    value="<%= locals && locals.oldData?oldData.birthDate:null %>"
+                                    autofocus
+                                >
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.birthDate && errors.birthDate.msg %>
+                                </div>
+                            </div>
+                            <div class="contenedor-regform address">
+                                <label class="labelAddress" id="labelAddress">Dirección</label>
+                                <input
+                                    type="text"
+                                    class="inputAddress <%= locals && locals.errors && errors.address?'error-input':null %>"
+                                    id="address"
+                                    name="address"
+                                    placeholder="Dirección"
+                                    value="<%= locals && locals.oldData?oldData.address:null %>"
+                                    autofocus
+                                >
+                                <div class="error-input">
+                                    <%= locals && locals.errors && errors.address && errors.address.msg %>
+                                </div>
+                            </div>
+                            <div class="contenedor-regform enail">
+                                <label class="labelEmail" id="labelEmail">Email</label>
+                                <input
+                                    type="email"
+                                    class="inputEmail <%= locals && locals.errors && errors.email?'error-input':null %>"
+                                    id="email"
+                                    name="email"
+                                    placeholder="example@gmail.com"
+                                    value="<%= locals && locals.oldData ? oldData.email : null %>"
+                                    autofocus
+                                    >
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.email && errors.email.msg %>
+                                    </div>
+                                
+                            </div>
+                            <div class="contenedor-regform password">
+                                <label class="labelPassword" id="labelPassword">Contraseña</label>
+                                <input type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    class="inputPassword <%= locals && locals.errors && errors.password?'error-input':null %>" 
+                                    name="password" 
+                                    placeholder="**********"
+                                    autofocus
+                                    >
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.password && errors.password.msg %>
+                                    </div>
+                            </div>
+                            <div class="contenedor-regform">
+                                <label class="labelRePassword" id="labelRePassword">Repita su contraseña</label>
+                                <input type="password" 
+                                    id="confirmPassword" 
+                                    class="inputRePassword <%= locals && locals.errors && errors.confirmPassword?'error-input':null %>" 
+                                    placeholder="**********" 
+                                    name="confirmPassword"
+                                    autofocus
+                                    >
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.confirmPassword && errors.confirmPassword.msg %>
+                                    </div>
+                            </div>
+                            <div class="contenedor-regform">
+                                <label class="labelAvatar">Imágen de Perfil</label>
+                                <input type="file" 
+                                    id="avatar" 
+                                    class="inputAvatar  <%= locals && locals.errors && errors.avatar?'error-input':null %>" 
+                                    name="avatar"
+                                    autofocus
+                                >
+                                    <div class="error-input">
+                                        <%= locals && locals.errors && errors.avatar && errors.avatar.msg %>
+                                    </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="reg-button">
+                            <div class="send-box">
+                                <button type="submit" class="send-button">Enviar</button>
+                            </div>
+                            <div class="got-account-box">
+                                <a href="./login" class="link-got-account">¿Ya tenés cuenta? Iniciá sesión</a>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </main>
+            <%- include('partials/footer') %>
+
+            <script src="/js/validation-register.js"></script>
+    </body>
+
+</html>

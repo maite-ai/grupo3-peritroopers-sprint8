@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <main class="main-productDet">
+                <h2><%= product.name %></h2>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="/../images/<%= product.image %>" alt="<%= product.name %>">
+                    </div>
+                    <div class="product-info">
+                        <div class="price-rate">
+                            <p class="price"><i class="fas fa-dollar-sign"></i><%= product.price %></p>
+                            <div class="rate">
+                                <i class="far fa-frown"></i><i class="far fa-frown-open"></i><i class="far fa-meh"></i><i class="far fa-smile"></i><i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="pay-button-map">
+                            <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13137.528426543311!2d-58.40592325!3d-34.59449805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1617576238700!5m2!1ses-419!2sar" width="300"
+                                    height="300" style="border:0;" allowfullscreen="" loading="lazy" class="map"></iframe></div>
+                            <div class="pay-button">
+                                <div class="p-pay">
+                                    <p>Medios de Pago</p>
+                                    <label for=""></label>
+                                    <select name="payOptions" id="">
+                                        <option value="credito">Tarjeta de Crédito</option>
+                                        <option value="debito">Tarjeta de Débito</option>
+                                        <option value="payPal">Pay Pal</option>
+                                        <option value="mercadoPago">Mercado Pago</option>
+                                        <option value="cash">Efectivo</option>
+                                    </select>
+                                </div>
+                                <div class="input-button">
+                                    <p>Unidades</p>
+                                    <div class="input-productDet">
+                                        <i class="fas fa-minus"></i><input type="text" placeholder="0"><i class="fas fa-plus"></i>
+                                    </div>
+                                    <button><a href="/productCart">Añadir al Carro</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="<%= product.id %>/edit" method="GET">
+                            <button class="detail-button" id="edit-button">Editar Producto</button>
+                        </form>
+                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method=POST>
+                            <button class="detail-button" id="delete-button"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="product-detail-container">
+                    <h3>Detalles</h3>
+                    <div class="product-detail">
+                        <p>- <%= product.description %></p>
+                    </div>
+                    
+                </div>
+                <div class="product-chat-container">
+                    <h3>Comentarios</h3>
+                    <div class="product-chat">
+                        <p><b>nicoperalta33</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur reprehenderit fugit molestias quo commodi ipsam nulla, inventore odio facere nostrum. Tenetur illum doloribus, ducimus placeat vel nisi laboriosam dignissimos ea?</p>
+                        <br>
+                        <p><b>marrbravo</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur reprehenderit fugit molestias quo commodi ipsam nulla, inventore odio facere nostrum. Tenetur illum doloribus, ducimus placeat vel nisi laboriosam dignissimos ea?</p>
+                    </div>
+                </div>
+                <div class="user-comment-container">
+                    <h3>Dejanos tu comentario</h3>                    
+                    <textarea class="comment-textarea" name="comment-textarea" id="" cols="30" rows="10" placeholder="Si ya Compraste el producto dejanos tu opinión."></textarea>
+                    <button src="./" class="send-button">Enviar</button>
+                </div>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

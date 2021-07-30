@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <main>
+                <div class="pic-ctn">
+                    <img src="images/play-your-way.jpg" alt="Productos Logitech" class="pic">
+                    <img src="images/experiencia-gamer.png" alt="Banner negocio" class="pic">
+                    <img src="images/medios-de-pago.png" alt="Medios de pago" class="pic">
+                </div>
+
+                <section>
+                    <h2>Novedades</h2>
+                    <article class="news">
+                        <div class="detail">
+                            <% if(locals && locals.products) {%>
+                                <% products.forEach(product => {%>
+                                    <%- include('partials/product', {product}) %>
+                            <%})%>
+                            <%}else{%>
+                                <p>No se encontraron productos</p>
+                            <% } %>
+                        </div>
+                    </article>
+                </section>
+                <br>
+                <section>
+                    <h2>Nuestras Marcas</h2>
+                    <article class="brand-container">
+                        <div class="our-brands">
+                            <ul class="brands" type="none">
+                                <li class="brand-item"><img src="images/brands/logo-corsair.png" width="180px" alt="Corsair"></li>
+                                <li class="brand-item"><img src="images/brands/logo-genius.png" width="180px" alt="Genius"></li>
+                                <li class="brand-item"><img src="images/brands/logitech.png" width="180px" alt="Logitech"></li>
+                                <li class="brand-item"><img src="images/brands/logo-noga.png" width="180px" alt="Noga"></li>
+                                <li class="brand-item"><img src="images/brands/logo-redragon.png" width="180px" alt="Redragon"></li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+                <br>
+                <section>
+                    <h2>Populares</h2>
+                    <article class="populars">
+                        <div class="gallery-container">
+                            <% if(locals && locals.products){ %>
+                                <% products.forEach(product => { %>
+                                    <%- include('partials/product', { product })%>
+                                <% }); %>
+                            <% } %>
+                        </div>
+                    </article>
+                </section>
+            </main>
+
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

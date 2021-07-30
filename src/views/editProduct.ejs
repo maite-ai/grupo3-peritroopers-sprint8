@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+        <main>
+            <h2>EDICIÓN DE PRODUCTO</h2>
+            <form action="/products/<%= product.id %>?_method=PUT" method="POST" class="creation" id="edit-form" enctype="multipart/form-data">
+                <label for="" class="edits-2" id="prod-name">Nombre del Producto:</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="edits <%= locals && locals.errors && errors.name?'error-input':null %>"
+                    value="<%= product.name %>"
+                    autofocus
+                >
+                    <div class="error-input">
+                        <%= locals && locals.errors && errors.name && errors.name.msg %>
+                    </div>
+                <label for="" class="edits-2">Descripción:</label>
+                <textarea
+                    name="description"
+                    id="description"
+                    cols="30"
+                    rows="10"
+                    class="edits <%= locals && locals.errors && errors.description?'error-input':null %>"
+                    value="<%= product.description %>"
+                    autofocus
+                ><%= product.description %></textarea>
+                    <div class="error-input">
+                        <%= locals && locals.errors && errors.description && errors.description.msg %>
+                    </div>
+                <label for="" class="edits-2">Imágen:</label>
+                <input
+                    type="file"
+                    name="image"
+                    class="inputAvatar <%= locals && locals.errors && errors.image?'error-input':null %>"
+                    id="image"
+                    autofocus
+                >
+                    <div class="error-input">
+                        <%= locals && locals.errors && errors.image && errors.image.msg %>
+                    </div>
+                <input
+                    type="hidden"
+                    name="oldImage"
+                    class="inputImage"
+                    id="old-image"
+                    value="<%= product.image %>"
+                    autofocus
+                >
+                <label for="" class="edits-2">Categoría:</label>
+                <select
+                    name="category"
+                    id="category"
+                    class="edits"
+                    value="<%= product.category %>"
+                    autofocus
+                >
+                    <option value=3>Auriculares</option>
+                    <option value=2>Teclados</option>
+                    <option value=4>Mouse</option>
+                    <option value=1>Micrófonos</option>
+                </select>
+                <label for="" class="edits-2">Colores:</label>
+                <select
+                    name="color"
+                    id="color"
+                    class="edits"
+                    value="<%= product.color %>"
+                    autofocus
+                >
+                    <option value=5>Azul</option>
+                    <option value=2>Blanco</option>
+                    <option value=6>Celeste</option>
+                    <option value=3>Negro</option>
+                    <option value=1>Rojo</option>
+                    <option value=7>Rosa</option>
+                    <option value=4>Verde</option>
+                    <option value=8>Violeta</option>
+                </select>
+
+                <label for="" class="edits-2">Marca:</label>
+                <select
+                    name="brandId"
+                    id="brand"
+                    class="edits"
+                    value="<%= product.brand %>"
+                    autofocus
+                >
+                    <option value=7>Blue</option>
+                    <option value=3>Corsair</option>
+                    <option value=4>HyperX</option>
+                    <option value=1>Logitech</option>
+                    <option value=5>Razer</option>
+                    <option value=2>Redragon</option>
+                    <option value=6>Shure</option>
+                </select>
+
+                <label for="" class="edits-2">Stock:</label>
+                <input
+                    type="input"
+                    name="stock"
+                    id="stock"
+                    class="edits <%= locals && locals.errors && errors.stock?'error-input':null %>"
+                    value="<%= product.stock %>"
+                    autofocus
+                >
+                    <div class="error-input">
+                        <%= locals && locals.errors && errors.stock && errors.stock.msg %>
+                    </div>
+
+                <label for="" class="edits-2">Precio:</label>
+                <input
+                    type="input"
+                    name="price"
+                    id="price"
+                    class="edits <%= locals && locals.errors && errors.price?'error-input':null %>"
+                    value="<%= product.price %>"
+                    autofocus
+                >
+                    <div class="error-input">
+                        <%= locals && locals.errors && errors.price && errors.price.msg %>
+                    </div>
+
+                <div class="create-button">
+                    <button type="submit" id="create-button" class="send-button">Modificar Producto</button>
+                </div> 
+            </form>
+        </main>
+    <%- include('partials/footer') %>
+    <script src="/js/validation-product.js"></script>
+</body>
+</html>

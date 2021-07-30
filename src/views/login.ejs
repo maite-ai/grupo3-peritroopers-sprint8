@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body class="body-login">
+        <%- include('partials/header') %>
+        <main class="main-login">
+            <article class="login-container">
+                <form action="/users/login" method="POST" class="login-page" id="login-page">
+                    <div class="login-fields">
+                        <div class="image-container">
+                            <img src="/images/Login-gif.gif" width="40%" alt="user-gif" class="profile-picture">
+                        </div>
+                    </div>
+                    <div class="login-fields">
+                        <div class="mail-container">
+                            <div class="mail-icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <input type="email" 
+                            id="email" name="email" 
+                            placeholder="Correo Electrónico" 
+                            class="sign-in-control <%= locals && locals.errors && errors.email?'error-input':null %>">
+                            <span class="error-input">
+                                <%= locals && locals.errors && errors.email && errors.email.msg %>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="login-fields">
+                        <div class="password-container">
+                            <div class="password-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <input type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Contraseña" 
+                            class="sign-in-control <%= locals && locals.errors && errors.password?'error-input':null %>">
+                            <span class="error-input">
+                                <%= locals && locals.errors && errors.password && errors.password.msg %>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="forgotpassword-contain">
+                        <ul type="none" class="forgot-password">
+                            <li><a href="#">¿Olvidaste tu Contraseña?</a></li>
+                        </ul>
+                    </div>
+                                
+                    <div class="login-fields">
+                        <div class="remember-me-container">
+                            <input type="checkbox" name="remember_me" value="remember-me" class="remember-me">
+                            <span class="rememberme-text">Recordarme</span>
+                        </div>
+                    </div>
+
+                    <div class="button-form">
+                        <button type="submit" class="login-button">Iniciar Sesión</button>
+                        <button type="submit" class="register-button"><a href="/users/register" class="register-link">¿No tenes usuario? Registrate</button></a>
+                    </div>
+                </form>
+            </article>
+        </main>
+        <%- include('partials/footer') %>
+        
+        <script src="/js/validation-login.js"></script>
+    </body>
+</html>
