@@ -70,6 +70,6 @@ let grupo = [{
 }];
 ```
 
-¿Querés ver como trabajamos este Sprint? Visitá [nuestro tablero de Sprint 7](https://trello.com/b/ddauf4ZZ/sprint-7) en Trello.
+¿Querés ver como trabajamos este Sprint? Visitá [nuestro tablero de Sprint 8](https://trello.com/b/yKbu169N/sprint-8) en Trello.
 
 ![Logo de DH-Troopers](logo-grupo.gif)
