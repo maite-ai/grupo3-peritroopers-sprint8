@@ -26,10 +26,12 @@ app.use(methodOverride('_method'));
 const homeRouter = require('./src/routes/homeRouter');
 const userRouter = require('./src/routes/userRouter');
 const productRouter = require('./src/routes/productRouter');
+const apiRouter = require('./src/routes/api/api');
 
 app.use('/users', userRouter);
 app.use('/', homeRouter);
 app.use('/products', productRouter);
+app.use('/api', apiRouter);
 app.use((req, res, next) => {
     res.status(404).render('404');
     next()
