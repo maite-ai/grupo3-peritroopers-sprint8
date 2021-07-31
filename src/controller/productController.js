@@ -23,7 +23,9 @@ let productController = {
     detail: async (req, res) => {
         try{
             const product = await DB.Product.findByPk(req.params.id);
-            console.log(product)
+            if(!product){
+                return res.render('404')
+            }
             return res.render('productDetail', { product });
         }
         catch(error){
