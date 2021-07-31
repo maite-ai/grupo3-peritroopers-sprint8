@@ -54,7 +54,8 @@ module.exports = (sequelize, dataTypes) => {
     voucherTypeId: dataTypes.INTEGER.UNSIGNED,
   }, {
     sequelize,
-    modelName: 'Purchase'
+    modelName: 'Purchase',
+    timestamps: false
   }) ;
 
   return Purchase

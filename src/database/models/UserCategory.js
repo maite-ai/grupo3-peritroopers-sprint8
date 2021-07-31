@@ -27,6 +27,7 @@ module.exports = (sequelize, dataTypes) => {
     }}, {
       sequelize,
       modelName: 'UserCategory',
+      timestamps: false
     });
   
   return UserCategory
