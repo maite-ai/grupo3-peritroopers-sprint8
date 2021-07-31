@@ -40,7 +40,8 @@ module.exports = (sequelize, dataTypes) => {
       purchaseId: dataTypes.INTEGER.UNSIGNED,
     }, {
       sequelize,
-      modelName: 'Order'
+      modelName: 'Order',
+      timestamps: false
     });
 
     return Order
