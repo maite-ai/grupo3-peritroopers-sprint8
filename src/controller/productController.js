@@ -89,13 +89,13 @@ let productController = {
     update: async (req, res) => {
         let product = await req.body;
         product.id = req.params.id;
-            product.image = req.file ? req.file.filename : req.body.oldImage;    
-            if(req.body.image === undefined) {
-                product.image = product.oldImage;
-            }
+        product.image = req.file ? req.file.filename : req.body.oldImage;    
+        if(req.body.image === undefined) {
+            product.image = product.oldImage;
+        }
 
-            console.log(product.image);
-            console.log(product);
+        console.log(product.image);
+        console.log(product);
 
         delete product.oldImage;
         await DB.Product.update({

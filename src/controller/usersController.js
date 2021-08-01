@@ -65,24 +65,30 @@ let userController = {
         }        
     },
     update: async (req, res) => {
-        try {
         console.log('Se está intentando almacenar algo')
-        let userUpdated = await db.User.update({
+        let user = await req.body;
+        user.id = req.params.id;
+        user.avatar = req.file ? req.file.filename : req.body.oldAvatar;
+        if(req.body.avatar === undefined) {
+            user.avatar = user.oldAvatar;
+        }
+
+        console.log(user.avatar);
+        console.log(user.address);
+        console.log(user);
+
+        delete user.oldAvatar;
+        await db.User.update({
             name: req.body.name,
             lastName: req.body.lastName,
             address: req.body.address,
-            avatar:req.file.filename
-        },{
+            avatar:req.body.avatar
+        }, {
             where: {
                 id: req.params.id
             }
         })
-
-        return res.redirect('/profile');
-    }
-        catch(error){
-            console.log(error);
-        }
+        res.redirect('./profile');
    },
 
     login: (req, res) => {
