@@ -5,9 +5,9 @@ module.exports = (req, res) => {
         meta: {
             status: 500,
             msg: '',
+            count: [],
         },
         data: {
-            count: [],
             list: [],
             countByCategory: []
         }
@@ -37,7 +37,7 @@ module.exports = (req, res) => {
         })
         response.meta.status = 200;
         response.data.list = productosListados;
-        response.data.count = productosListados.length
+        response.meta.count = productosListados.length
         response.data.countByCategory = categoryCounter
         res.json(response)
     })
