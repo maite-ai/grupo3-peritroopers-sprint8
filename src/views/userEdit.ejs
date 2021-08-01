@@ -53,13 +53,26 @@
 
                             <div class="contenedor-regform">
                                 <label class="labelAvatar">Imágen de Perfil</label>
-                                <input type="file" class="inputAvatar" name="avatar">
+                                <input
+                                    type="file"
+                                    class="inputAvatar"
+                                    name="avatar"
+                                    id="avatar"
+                                    autofocus
+                                >
                                     <div class="error-input">
                                         <%= locals && locals.errors && errors.avatar && errors.avatar.msg %>
                                     </div>
-                                <input type="hidden" name="oldImage" id="image" value="<%= user.image %>">
+                                <input
+                                    type="hidden"
+                                    name="oldAvatar"
+                                    class="inputImage"
+                                    id="oldAvatar"
+                                    value="<%= user.avatar %>"
+                                    autofocus
+                                >
                             </div>
-                        </div>                  
+                        </div>
 
                         <div class="reg-button">
                             <div class="send-box">
