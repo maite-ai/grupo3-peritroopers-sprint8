@@ -2,8 +2,10 @@ const { Product, Brand, Category, Color } = require('../../../database/models');
 
 module.exports = (req, res) => {
     let id = Number(req.params.id);
+
     Product.findByPk(id, { include: [{model: Brand, as: "brands"},  {model: Category, as: "categories"}, {model: Color, as: "colors"}] })
-        .then((product) => {
+    .then((product) => {
+        if(product) {
             let response = {
                 meta: {
                     status: 200
@@ -22,9 +24,18 @@ module.exports = (req, res) => {
                 }
             };
             res.json(response);
-        })
-        .catch(error => {
-            console.log(error)
-            res.status(404).send(error)
-        })
+        } else {
+            res.status(404).json({
+                meta: {
+                    status: 404,
+                    msg: 'Producto no existente'
+                },
+                data: []
+            });
+        }
+    })
+    .catch(error => {
+        console.log(error)
+        res.status(404).send(error)
+    })
 }
