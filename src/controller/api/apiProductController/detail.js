@@ -1,21 +1,9 @@
 const { Product, Brand, Category, Color } = require('../../../database/models');
+
 module.exports = (req, res) => {
     let id = Number(req.params.id);
-    Product.findByPk(id, { include: [Brand, Category, Color] })
+    Product.findByPk(id, { include: [{model: Brand, as: "brands"},  {model: Category, as: "categories"}, {model: Color, as: "colors"}] })
         .then((product) => {
-            let allProductBrands = [];
-            product.brands.forEach(brand => {
-                allProductBrands.push(brand.name);
-            });
-            let allProductCategories = [];
-            product.categories.forEach(category => {
-                allProductCategories.push(category.name);
-            });
-            let allProductColors = [];
-            product.colors.forEach(color => {
-                allProductColors.push(color.name);
-            });
-
             let response = {
                 meta: {
                     status: 200
@@ -27,14 +15,16 @@ module.exports = (req, res) => {
                     //revisar image!!
                     image: product.image,
                     stock: product.stock,
-                    brand: allProductBrands,
-                    category: allProductCategories,
-                    color: allProductColors
+                    brand: [product.brands.name],
+                    category: [product.categories.name],
+                    color: [product.colors.name],
+                    url_image: req.headers.host + '/images/' + product.image,                
                 }
             };
             res.json(response);
         })
         .catch(error => {
-            res.status(404).send('página no encontrada, sorry bro!')
+            console.log(error)
+            res.status(404).send(error)
         })
 }
