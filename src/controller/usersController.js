@@ -56,7 +56,6 @@ let userController = {
         try{
             console.log('Llegue al formulario de edición')
             let user = await db.User.findByPk(req.session.userLogged.id);
-            console.log(user);
             res.render("userEdit", {user});
         }
         catch(error) {
@@ -64,20 +63,19 @@ let userController = {
             console.log(error);
         }        
     },
+    
     update: async (req, res) => {
+        if(!req.session.userLogged){
+            return res.redirect('./login');
+        }
         console.log('Se está intentando almacenar algo')
-        let user = await req.body;
-        user.id = req.params.id;
-        user.avatar = req.file ? req.file.filename : req.body.oldAvatar;
+        let userToEdit = await db.User.findByPk(req.session.userLogged.id);
+        userToEdit.avatar = req.file ? req.file.filename : req.body.oldAvatar;
         if(req.body.avatar === undefined) {
-            user.avatar = user.oldAvatar;
+            userToEdit.avatar = userToEdit.oldAvatar;
         }
 
-        console.log(user.avatar);
-        console.log(user.address);
-        console.log(user);
-
-        delete user.oldAvatar;
+        delete userToEdit.oldAvatar;
         await db.User.update({
             name: req.body.name,
             lastName: req.body.lastName,
@@ -85,7 +83,7 @@ let userController = {
             avatar:req.body.avatar
         }, {
             where: {
-                id: req.params.id
+                id: req.session.userLogged.id
             }
         })
         res.redirect('./profile');

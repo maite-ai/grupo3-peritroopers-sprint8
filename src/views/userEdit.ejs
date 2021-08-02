@@ -10,11 +10,12 @@
                     <form class="register-form" action="/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <div class="regform-outofthebox">
                             <div class="contenedor-regform name">
-                                <label class="labelName" id="labelName">Nombre</label>
+                                <label for="" class="labelName" id="labelName">Nombre</label>
                                 <input 
                                     type="text"
                                     class="inputName <%= locals && locals.errors && errors.name?'error-input':null %>"
                                     name="name"
+                                    id= "name"
                                     placeholder="Cosme"
                                     value="<%= user.name %>"
                                 >
@@ -29,6 +30,7 @@
                                     type="text"
                                     class="inputLastName <%= locals && locals.errors && errors.lastName?'is-invalid':null %>"
                                     name="lastName"
+                                    id = "lastName"
                                     placeholder="Fulanito"
                                     value="<%= user.lastName %>"
                                 >
@@ -43,6 +45,7 @@
                                     type="text"
                                     class="inputAddress <%= locals && locals.errors && errors.address?'is-invalid':null %>"
                                     name="address"
+                                    id= "address"
                                     placeholder="Dirección"
                                     value="<%= user.address %>"
                                 >
