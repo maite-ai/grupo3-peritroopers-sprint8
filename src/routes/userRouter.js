@@ -13,7 +13,7 @@ router.get('/login', guestMiddleware, userController.login);
 router.post('/login', validations, userLoggedMiddleware, userController.loginProcess);
 router.get('/profile', authMiddleware, userController.profile);
 router.get('/edit', userController.edit);
-router.put('/:id', userController.update);
+router.put('/:id',uploadFile.single('avatar'), userController.update);
 router.get('/logout', userController.logout);
 
 module.exports = router;
