@@ -3,20 +3,22 @@ const app = express();
 const port = process.env.PORT;
 const path = require("path");
 const methodOverride = require("method-override");
-const session = require('express-session')
-const cookies=require('cookie-parser')
-const userLoggedMiddleware=require('./src/middlewares/userLoggedMiddleware')
+const cors = require('cors');
+const session = require('express-session');
+const cookies = require('cookie-parser');
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 
 const publicPatch = path.resolve(__dirname, "./public");
 
+app.use(cors());
 app.use(express.static(publicPatch));
 app.use(session({
     secret:"Secret",
     resave:false,
     saveUnitialized:false
-}))
-app.use(cookies())
-app.use(userLoggedMiddleware)
+}));
+app.use(cookies());
+app.use(userLoggedMiddleware);
 app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false}));
