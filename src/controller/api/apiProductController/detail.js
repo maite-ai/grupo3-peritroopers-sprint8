@@ -20,7 +20,7 @@ module.exports = (req, res) => {
                     brand: [product.brands.name],
                     category: [product.categories.name],
                     color: [product.colors.name],
-                    url_image: req.headers.host + '/images/' + product.image,                
+                    url_image: req.headers.host + '/images/' + product.image,
                 }
             };
             res.json(response);

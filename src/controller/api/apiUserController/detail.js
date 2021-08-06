@@ -17,7 +17,7 @@ module.exports = (req, res) => {
                     address: result.address,
                     email: result.email,
                     //Chequear Avatar!!
-                    avatar: result.avatar
+                    avatar: req.headers.host + '/images/avatars/' + result.avatar
                 }
             }
             return res.json(response);

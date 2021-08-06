@@ -6,10 +6,10 @@ module.exports = (req, res) => {
             status: 500,
             msg: '',
             count: [],
+            countByCategory: [],
         },
         data: {
             list: [],
-            countByCategory: []
         }
     }
 
@@ -24,6 +24,9 @@ module.exports = (req, res) => {
                 id: product.id,
                 name: product.name,
                 description: product.description,
+                brand: [product.brands.name],
+                category: [product.categories.name],
+                color: [product.colors.name],
                 url: `http://localhost:3030/api/products/${product.id}`
             })
         })
@@ -38,7 +41,7 @@ module.exports = (req, res) => {
         response.meta.status = 200;
         response.data.list = productosListados;
         response.meta.count = productosListados.length
-        response.data.countByCategory = categoryCounter
+        response.meta.countByCategory = categoryCounter
         res.json(response)
     })
     .catch(error =>{

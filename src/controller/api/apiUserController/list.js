@@ -17,7 +17,7 @@ module.exports = (req, res) => {
                     name: user.name,
                     lastName: user.lastName,
                     email: user.email,
-                    detail: `/api/users/${user.id}`
+                    detail: `http://localhost:3030/api/users/${user.id}`
                 })
             });
             return res.json(response);
