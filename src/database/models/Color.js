@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
   
   Color.init({
     id: {
-      type: dataTypes.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },

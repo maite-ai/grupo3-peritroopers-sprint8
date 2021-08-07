@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
 
   UserCategory.init({
       id: {
-      type: dataTypes.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
