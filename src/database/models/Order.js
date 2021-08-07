@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
   
     Order.init({
       id: {
-        type: dataTypes.INTEGER.UNSIGNED,
+        type: dataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },

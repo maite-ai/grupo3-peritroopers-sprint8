@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
   
   Brand.init({
     id: {
-      type: dataTypes.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },

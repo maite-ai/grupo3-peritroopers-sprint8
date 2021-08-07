@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
 
   Purchase.init({
     id: {
-      type: dataTypes.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
