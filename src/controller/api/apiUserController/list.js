@@ -17,6 +17,7 @@ module.exports = (req, res) => {
                     name: user.name,
                     lastName: user.lastName,
                     email: user.email,
+                    avatar: `http://localhost:3030/images/avatars/${user.avatar}`,
                     detail: `http://localhost:3030/api/users/${user.id}`
                 })
             });
