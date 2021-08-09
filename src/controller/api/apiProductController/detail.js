@@ -11,6 +11,7 @@ module.exports = (req, res) => {
                     status: 200
                 },
                 data: {
+                    id: product.id,
                     name: product.name,
                     description: product.description,
                     price: product.price,

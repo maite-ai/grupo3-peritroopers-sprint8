@@ -2,12 +2,9 @@ const { Product, Brand, Category, Color, Sequelize } = require('../../../databas
 
 module.exports = (req, res) => {
     console.log("Entre")
-    Product.findOne({
-        order: [
-            ['id', 'DESC']
-        ],
-        include: [{model: Brand, as: "brands"}, {model: Category, as: "categories"}, {model: Color, as: "colors"}]
-    })
+    let promise = 
+        Product.findOne({ order: [['id', 'DESC']], include: [{model: Brand, as: "brands"}, {model: Category, as: "categories"}, {model: Color, as: "colors"}]})
+    promise
     .then(product => JSON.parse(JSON.stringify(product)))
     .then(product => {
     let response = {
