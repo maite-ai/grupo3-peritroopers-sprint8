@@ -24,6 +24,7 @@ module.exports = (req, res) => {
                 id: product.id,
                 name: product.name,
                 description: product.description,
+                image: `http://localhost:3030/images/${product.image}`,
                 brand: [product.brands.name],
                 category: [product.categories.name],
                 color: [product.colors.name],

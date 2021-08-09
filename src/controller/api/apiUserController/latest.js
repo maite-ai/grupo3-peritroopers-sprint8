@@ -22,7 +22,7 @@ module.exports = (req, res) => {
             birthDate: user.birthDate,
             address: user.address,
             email: user.email,
-            avatar: req.headers.host + '/images/avatars/' + user.avatar
+            avatar: `http://localhost:3030/images/avatars/${user.avatar}`
             }
         };
 
