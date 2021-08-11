@@ -3,7 +3,7 @@
     <%- include('partials/head') %>
 <body>
     <%- include('partials/header') %>
-        <main>
+    <main style="margin-top: 140px">
             <h2>EDICIÓN DE PRODUCTO</h2>
             <form action="/products/<%= product.id %>?_method=PUT" method="POST" class="creation" id="edit-form" enctype="multipart/form-data">
                 <label for="" class="edits-2" id="prod-name">Nombre del Producto:</label>

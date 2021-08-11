@@ -7,6 +7,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const userAuthMiddleware = require('../middlewares/userAuthMiddleware');
 
 router.get("/productCart", authMiddleware, productController.productCart);
+router.get("/catalogue", productController.list)
 router.get('/', productController.list);
 router.get('/search', productController.search);
 router.get('/create', authMiddleware, userAuthMiddleware, productController.create);

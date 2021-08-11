@@ -21,119 +21,84 @@ header {
     background-color: #180A41;
     color: white;
 }
+
     .search-logo-container {
         display: flex;
         justify-content: space-around;
         position: relative;
     }
-        header a i {
-            color: white;
-        }
-        .user-avatar {
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            
-        }
 
-
-/* Iconos: Carrito y Fav. -------------------------------------*/
-
-.cart-heart {
-    display: flex;
-    align-self: center;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    position: absolute;
-    top: 45%;
-    left: 64%;
-    transform: translateX(-50%)
-}
-    .cart-box {
-        margin: 10px;
+    div.collapse ul.navbar-nav li.nav-item a.nav-link#header-links {
+        font-family: 'Chakra Petch', monospace;
+        color: #fff;
     }
-        .cart:hover {
-            color: rgb(110, 110, 237);
+        div.collapse ul.navbar-nav li.nav-item a.nav-link#header-links:hover {
+            text-shadow: 1px 1px 2px rgb(110, 110, 237);
+            text-decoration: underline;
+            font-size: 17px;
         }
-        .cant {
-            text-decoration: none;
+
+        nav.nav-bar ul.barra-nav1 li.ms-2 a#header-links {
+            font-family: 'Chakra Petch', monospace;
             color: #fff;
-            font-size: 13px;
+            text-decoration: none;
         }
+        nav.nav-bar ul.barra-nav1 li.ms-2 a#header-links:hover {
+                text-shadow: 1px 1px 2px rgb(110, 110, 237);
+                text-decoration: underline;
+                font-size: 17px;
+            }
 
-    .fav-box {
-        margin: 10px;
-    }
-        .heart:hover {
-            color: rgb(110, 110, 237);
+        div.collapse ul.navbar-nav li.nav-item a.nav-link#header-rounded span.badge {
+            display: inline-block;
+            padding: 0.35em 0.65em;
+            font-size: 0.75em;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25rem;
+            background-color: red; 
         }
-
-        .cart,
-        .heart {
-            flex: 1 1 auto;
-            font-size: 16px;
-            margin: 5px;
-            transition: color 0.2s ease;
-        }
-
-
-/* Contenedor Logo completo y reducido ---------------------------*/
-
-.logo-container {
-    margin: 20px 50% 20px 5%;
-    text-align: center;
-}
-    .logo-container a {
-        text-decoration: none;
-    }
-    .logo-box-normal {
-        display: none;
-    }
-
-    .logo-box-reduced {
-        display: flex;
-        justify-content: center;
-    }
-
 
 /* Casillero y botón de Búsqueda ------------------------------- */
 
-.search-container {
-    display: flex;
-    position: absolute;
-    left: 87%;
-    transform: translateX(-87%);
-    top: 2%;
-    margin-right: 4%;
-    margin-top: 15px;
-    padding: 1px;
-    background-color: #fff;
-    border-radius: 10px;
-
-}
-    .search-box {
-        width: 150px;
+    div#search-container {
+        width: 39%;
+        margin-left: 20%;
+        margin-right: 30px;
+        background-color: #fff;
+        border-radius: 6px;
+        padding-right: 0;
+        padding-top: 0px;
+        padding-bottom: 0px
     }
-        .search-box input {
-            width: 100%;
-            height: 18px;
-            border-radius: 10px;
-            border: none;
-        }
-        .casillero {
-            padding-left: 7px;
-            margin-top: 2px; 
-            margin-left: 5px;  
-            font-size: 12px;
-        }
 
-    .icon-box{
-        padding: 2px;
+    div#search-container form#search-form div#search-box input.form-control#casillero {
+        border: none;
+        margin-right: 20px;
+        padding-right: 0px;
     }
-        .icon-box .fa-search {
+
+    div#search-box button.icon-box {
+        background-color: white;
+        padding-right: 0px;
+        margin-left: 40px;
+        text-align: rigth;
+
+    }
+
+
+        button.icon-box i.fa-search {
+            margin-left: 20px;
             text-align: center;
-            color: #c1c4c4;
+            color: black;
             text-decoration: none;
+            padding: 2px;
+            background-color: #fff;
+            text-align: rigth;
         }
 /* Burguer y enlaces ------------------------------------ */
 
@@ -176,6 +141,7 @@ header {
         }
 /* MAIN ================================================= */
 main {
+    margin-top: 50px;
     background-color: #f8f1f1;
 }
     h2 {
@@ -1109,9 +1075,6 @@ h3 {
         }
     
     .logo-box-reduced {
-        display: none;
-    }
-    .logo-box-normal {
         display: flex;
     }
 
@@ -1151,15 +1114,7 @@ h3 {
             flex-flow: row;
             justify-content: space-around;
         }
-            .secciones a {
-                margin: 10px;
-                color: #fff;
-            }
-                nav ul .secciones:hover a {
-                    text-shadow: 1px 1px 2px rgb(110, 110, 237);
-                    text-decoration: underline;
-                    font-size: 17px;
-                }
+        
 
     /* Footer --------------------------- */
     .data-item {

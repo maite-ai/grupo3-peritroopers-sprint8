@@ -3,11 +3,35 @@
 <%- include('partials/head') %>
 <body>
     <%- include('partials/header') %>
-    <main>
-        <h2>Hi <%= user.name %></h2>
-        <img src="/../images/avatars/<%= user.avatar %>" alt="" height="250px" width="200px">
-        <p><%= user.email %></p>
-        <a href="edit">Editar usuario</a>
+    <main style="margin-top: 140px" class=" pb-5">
+        <h2 class="text-center">Hola, <%= user.name %></h2>
+        <div class="fluid-container d-flex justify-content-center">
+            <div class="card col-6 text-center">
+                <div class="card-body text-center">
+                    <img class="rounded-circle" src="/../images/avatars/<%= user.avatar %>" alt="" height="200px" width="200px">
+                </div>
+                <div class="card-footer text-start h5 pb-3">
+                    <div>
+                        <span class="text-primary fw-bold">Nombre completo: </span>
+                        <span><%= user.name %> <%= user.lastName %></span>
+                    </div>
+                    <div>
+                        <span class="text-primary fw-bold">Email: </span>
+                        <span><%= user.email %></span>
+                    </div>
+                    <div>
+                        <span class="text-primary fw-bold">Dirección: </span>
+                        <span><%= user.address %></span>
+                    </div>
+                    
+                </div>
+                <div class="pb-2 h6">
+                    <a href="edit">Editar usuario</a>
+                </div>
+                
+            </div> 
+        </div>
+        
     </main>
     <%- include('partials/footer') %>
 </body>

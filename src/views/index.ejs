@@ -4,15 +4,55 @@
 
     <body>
         <%- include('partials/header') %>
-            <main>
-                <div class="pic-ctn">
+            <main style="margin-top: 130px">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="images/play-your-way.jpg" class="d-block h-80 w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h4 class="fw-bold">Nuestra marca estrella</h4>
+                          <p class="h5">Logitech se destaca por sus productos de diseño de vanguardia.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" data-bs-interval="1800">
+                        <img src="images/experiencia-gamer.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h4 class="fw-bold">La mejor calidad, al mejor precio</h4>
+                          <p class="h5">Tenés entre varias opciones para elegir, entre marcas, modelos y categorías.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="images/medios-de-pago.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h4 class="fw-bold">Medios de pago</h4>
+                          <p class="h5">Aceptamos todos los medios de pago disponibles.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <br>
+
+               <!--<div class="pic-ctn">
                     <img src="images/play-your-way.jpg" alt="Productos Logitech" class="pic">
                     <img src="images/experiencia-gamer.png" alt="Banner negocio" class="pic">
                     <img src="images/medios-de-pago.png" alt="Medios de pago" class="pic">
-                </div>
+                </div>-->
 
                 <section>
-                    <h2>Novedades</h2>
+                    <h2>Los más comprados</h2>
                     <article class="news">
                         <div class="detail">
                             <% if(locals && locals.products) {%>

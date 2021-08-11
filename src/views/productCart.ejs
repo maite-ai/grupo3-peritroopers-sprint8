@@ -4,99 +4,143 @@
 
     <body>
         <%- include('partials/header') %>
-            <main>
+        <main style="margin-top: 140px">
                 <section class="cart-buttons">
                     <h2>Carrito</h2>
                     <article class="carrito">
-                        <table class="table-cart">
-                            <thead>
-                                <tr class="encabezado">
-                                    <th class="item-encabezado"></th>
-                                    <th class="item-encabezado">Imagen</th>
-                                    <th class="item-encabezado">Detalle</th>
-                                    <th class="item-encabezado">Cantidad</th>
-                                    <th class="item-encabezado">Precio unitario</th>
-                                    <th class="item-encabezado">Precio final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="celda-i"><i class="fas fa-trash-alt"></i></td>
-                                    <td class="celdas"><img src="/images/auricularesCorsairNovedades.jpg" alt="" class="foto-carro"></td>
-                                    <td class="celdas"><span class="detalle-producto">Auriculares gamer Corsair LT-453 Bluetooth</span></td>
-                                    <td class="celdas">
-                                        <select name="cantidad" class="cantidad">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                                    </td>
-                                    <td class="celdas"><span class="precio-unitario">$ 2.574,50</span></td>
-                                    <td class="celdas"><span class="precio-final">$ 2.574,50</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="celda-i"><i class="fas fa-trash-alt"></i></td>
-                                    <td class="celdas"><img src="/images/tecladoRedDragonPopulares.jpg" alt="" class="foto-carro"></td>
-                                    <td class="celdas"><span class="detalle-producto">Teclado USB Redragon retroiluminado RGB AS-34f3</span></td>
-                                    <td class="celdas">
-                                        <select name="cantidad" class="cantidad">
-                                <option value="1">1</option>
-                                <option value="2" selected>2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                                    </td>
-                                    <td class="celdas"><span class="precio-unitario">$ 5.471,99</span></td>
-                                    <td class="celdas">
-                                        <spa class="precio-final">$ 10.943,98</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="celda-i"><i class="fas fa-trash-alt"></i></td>
-                                    <td class="celdas"><img src="/images/mouseHyperXPopulares.jpg" alt="" class="foto-carro"></td>
-                                    <td class="celdas"><span class="detalle-producto">Mouse gamer HyperX óptico</span></td>
-                                    <td class="celdas">
-                                        <select name="cantidad" class="cantidad">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                                    </td>
-                                    <td class="celdas"><span class="precio-unitario">$ 974,00</span></td>
-                                    <td class="celdas"><span class="precio-final">$ 974,00</span></td>
-                                </tr>
-                                <tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="pie-cuadro"></th>
-                                            <th class="pie-cuadro"></th>
-                                            <th class="pie-cuadro"></th>
-                                            <th class="pie-cuadro"></th>
-                                            <th class="total">Total</th>
-                                            <th class="total"> $ 13.147,54</th>
-                                        </tr>
-                                    </tfoot>
-                        </table>
+                        <div class="container d-flex justify-content-center">
+                            <div class="col-8 d-block">
+                                
+                                <div class="card col-6 shadow">
+                                    <div class="row card-body">
+                                        <div class="col text-center">
+                                            <img src="/images/auricularesCorsairNovedades.jpg" alt="" class="foto-carro">
+                                        </div>
+                                        <div class="col-6 text-start">
+                                            <span class="h5 detalle-producto">Auriculares gamer Corsair LT-453 Bluetooth</span>
+                                            <div>
+                                                <select name="cantidad" class="cantidad">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </div>
+                                            <div> 
+                                                <span class="fw-bold">Precio unitario: </span>
+                                                <span class="h5 text-success precio-unitario">$ 2.574,50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+                                        <i class="fas fa-trash-alt"></i>
+                                        <span class="h4 text-success fw-bold precio-final">$ 2.574,50</span>
+                                    </div>
+                                </div>
+    
+                                <div class="card col-6 shadow">
+                                    <div class="row card-body">
+                                        <div class="col text-center">
+                                            <img src="/images/tecladoRedDragonPopulares.jpg" alt="" class="foto-carro">
+                                        </div>
+                                        <div class="col-6 text-start">
+                                            <span class="detalle-producto">Teclado USB Redragon retroiluminado RGB AS-34f3</span>
+                                            <div>
+                                                <select name="cantidad" class="cantidad">
+                                                    <option value="1">1</option>
+                                                    <option value="2" selected>2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </div>
+                                            <div> 
+                                                <span class="fw-bold">Precio unitario: </span>
+                                                <span class="h5 text-success precio-unitario">$ 5.471,99</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+                                        <i class="fas fa-trash-alt"></i>
+                                        <span class="h4 text-success fw-bold precio-final">$ 10.943,98</span>
+                                    </div>
+                                </div>
+    
+                                <div class="card col-6 shadow">
+                                    <div class="row card-body">
+                                        <div class="col text-center">
+                                            <img src="/images/mouseHyperXPopulares.jpg" alt="" class="foto-carro">
+                                        </div>
+                                        <div class="col-6 text-start">
+                                            <span class="detalle-producto">Mouse gamer HyperX óptico</span>
+                                            <div>
+                                                <select name="cantidad" class="cantidad">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <br>
+                                            <div> 
+                                                <span class="fw-bold">Precio unitario: </span>
+                                                <span class="h5 text-success precio-unitario">$ 974,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+                                        <i class="fas fa-trash-alt"></i>
+                                        <span class="h4 text-success fw-bold precio-final">$ 974,00</span>
+                                    </div>
+                                </div>
+                                <div class="h3 text-primary fw-bold">
+                                    <span>Total</span>
+                                    <span> $ 13.147,54</span>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-2 mx-1">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Calle</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Altura</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Altura</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Altura</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     </article>
 
                     <article>
