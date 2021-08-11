@@ -353,6 +353,10 @@ footer {
         height: 100%;
     }
 
+    .carrousel-img {
+        height: 300px;
+    }
+
 @keyframes display {
     0% {
         transform: translateX(200px);
