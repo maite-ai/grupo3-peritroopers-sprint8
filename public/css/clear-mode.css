@@ -857,6 +857,11 @@ h3 {
                 color: #fff;
                 border-radius: 4px;
             }
+
+            .edit-delete-product-detail{
+                display: flex;
+            }
+
             #edit-button:hover, #delete-button:hover{
                 background-color: rgb(80, 80, 207);
                 box-shadow: 0px 0px 5px gray;
@@ -1243,8 +1248,11 @@ h3 {
                     margin: 0 5px;
                     width: 8%;
                 }
-                .detail-button{
-                    width: 20%;
+                #edit-product-form{
+                    margin-right: 20px;
+                }
+                #edit-button{
+                    width: 100%;
                 }
     
      /* ================================= FAQ ======================================== */

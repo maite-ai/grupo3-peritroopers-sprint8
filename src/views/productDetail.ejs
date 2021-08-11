@@ -41,12 +41,16 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="<%= product.id %>/edit" method="GET">
-                            <button class="detail-button" id="edit-button">Editar Producto</button>
-                        </form>
-                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method=POST>
-                            <button class="detail-button" id="delete-button"><i class="fas fa-trash-alt"></i></button>
-                        </form>
+                        <% if(locals.isLogged && userLogged.userCategoryId != 2) { %>
+                            <div class="edit-delete-product-detail">
+                                <form action="<%= product.id %>/edit" method="GET" id="edit-product-form">
+                                    <button class="detail-button" id="edit-button">Editar Producto</button>
+                                </form>
+                                <form action="/products/delete/<%= product.id %>?_method=DELETE" method=POST>
+                                    <button class="detail-button" id="delete-button"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
                 <div class="product-detail-container">
