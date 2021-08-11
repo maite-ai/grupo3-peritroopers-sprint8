@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+    <body>
+        <%- include('partials/header') %>
+        <main style="margin-top: 140px">
+                <section>
+                    <h2>Catálogo de Productos</h2>
+                    <article class="news">
+                        <div class="detail">
+                            <% if(locals && locals.products) {%>
+                                <% products.forEach(product => {%>
+                                    <%- include('partials/product', {product}) %>
+                            <%})%>
+                            <%}else{%>
+                                <p>No se encontraron productos</p>
+                            <% } %>
+                        </div>
+                    </article>
+                </section>
+                <br>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+</html>

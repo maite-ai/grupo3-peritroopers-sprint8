@@ -1,63 +1,70 @@
 <header>
-    <section class="search-logo-container">
-        <article class="cart-heart">
-            <div class="cart-box">
-                <a href="/products/productCart"><i class="fas fa-shopping-cart cart"></i></a>
-                <span class="cant">4</span>
+    <section class="navbar navbar-expand-lg shadow fixed-top search-logo-container" style="background-color: #180a41;">
+        <div>
+            <div class="container-fluid ms-5 ps-2 my-3">
+                <a class="navbar-brand" href="#">
+                  <img src="/images/logo-cortado.gif" alt="Logo Peritroopers" width="220" height="80" class="d-inline-block align-text-top">
+                </a>
             </div>
-            <div class="fav-box">
-                <a href="/#populares"><i class="fas fa-heart heart"></i></a>
-            </div>
-        </article>
-
-        <article class="logo-container">
-            <a href="/">
-                <div class="logo-box-normal">
-                    <img src="/images/logo1.gif" alt="Logo Peritroopers" width="250">
-                </div>
-                <div class="logo-box-reduced">
-                    <img src="/images/logo-cortado.gif" alt="Logo Peritroopers" width="120">
-                </div>
-            </a>
-        </article>
-
-        <article class="search-container">
-            <div class="search-box">
-                <form action="" class="cuadro-busqueda" method="GET" target="_blank">
-                    <input type="search" placeholder="¿Qué estás buscando?" size="30px" class="casillero">
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div style="font-family: 'Chakra Petch';" class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-light" aria-current="page" href="/" id="header-links">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/products/catalogue" id="header-links">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/users/register" id="header-links">Registrate</a>
+              </li>
+              <li class="nav-item" id="header-links">
+                <a class="nav-link text-light" href="/users/login" id="header-links">Login</a>
+              </li>
+              <li class="nav-item" id="header-links">
+                <a class="nav-link text-light" href="#" id="header-links">
+                    <i class="fas fa-heart heart"></i></a>
+              </li>
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link text-light nav-link dropdown-toggle" href="/products/productCart" id="header-rounded">
+                    <i class="fas fa-shopping-cart cart"></i>
+                    <span className="badge badge-pill badge-dange badge-counter">4</span>
+                </a>
+              </li>
+            </ul>
+            <div class="container-fluid" id="search-container">
+                <form class="d-flex" action="/products/search" method="GET" target="_blank" id="search-form">
+                    <div class="search-box d-flex" id="search-box">
+                        <input class="form-control" id="casillero" type="search" placeholder="¿Qué estás buscando?" aria-label="Search" width="30px">
+                        <button class="btn btn-light icon-box" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </form>
             </div>
-            <div class="icon-box">
-                <a href="/">
-                    <i class="fas fa-search"></i>
-                </a>   
-            </div>
-        </article>
 
-        <div class="burger-container">
-            <span class="burger-menu">
-            <a href=""><i class="fa fa-bars burger"></i></a>
-        </span>
-        </div>
-
-        <nav class="nav-bar">
-            <ul type="none" class="barra-nav1">
-                <li class="secciones"><a href="/">Home</a></li>
-                <li class="secciones"><a href="#">Catálogo</a></li>
-                <% if(locals.isLogged){ %>
-                    <li><a href="/users/profile">My profile</a></li>
-                    <li><a href="/users/logout">Logout</a></li>
-                    <li><a href="#"><img src="/../images/avatars/<%= userLogged.avatar %>" alt="" class="user-avatar"><!--Hi <%= locals.userLogged.name%>--></a></li>
-                    <!--<li class="secciones"><a href="/products/create">Crear Producto</a></li>-->
-                    <% }else{ %>
-                        <li class="secciones"><a href="/users/register">Creá tu cuenta</a></li>
-                        <li class="secciones"><a href="/users/login">Ingresá</a></li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+        
+            <nav class="nav-bar">
+                <ul type="none" class="barra-nav1 ">
+                    <% if(locals.isLogged){ %>
+                        <li class="ms-2 nav-item">
+                            <a href="/users/profile" id="header-links">Mi perfil</a></li>
+                        <li class="ms-2 nav-item">
+                            <a href="/users/logout" id="header-links">Salir</a></li>
+                        <li class="ms-2 nav-item">
+                            <a href="#" id="header-links" class="nav-link dropdown-toggle" id="userDropdown">
+                            <img class="img-profile rounded-circle" src="/../images/avatars/<%= userLogged.avatar %>" alt="Avatar usuario" width="60"><!--Hi <%= locals.userLogged.name%>--></a></li>
+                        <!--<li class="secciones"><a href="/products/create">Crear Producto</a></li>-->
+                        <% } %>
+                    <% if(locals.isLogged && userLogged.userCategoryId != 2) { %>
+                        <li class="secciones"><a href="/products/create">Crear Producto</a></li>
                     <% } %>
-                <% if(locals.isLogged && userLogged.userCategoryId != 2) { %>
-                    <li class="secciones"><a href="/products/create">Crear Producto</a></li>
-                <% } %>
-            </ul>
-        </nav>
+                </ul>
+            </nav>
     </section>
     <a href="https://api.whatsapp.com/send?phone=5495508107&text=Hola%21%20Quisiera%20hacer%20una%20consulta." class="float" target="_blank">
         <i class="fab fa-whatsapp my-float"></i>
