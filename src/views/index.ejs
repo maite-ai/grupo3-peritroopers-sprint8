@@ -51,13 +51,13 @@
                     <h2>Los más comprados</h2>
                     <article class="news">
                         <div class="detail">
-                            <% if(locals && locals.products) {%>
-                                <% products.forEach(product => {%>
-                                    <%- include('partials/product', {product}) %>
-                            <%})%>
-                            <%}else{%>
-                                <p>No se encontraron productos</p>
-                            <% } %>
+                          <% if(locals && locals.products) {%>
+                              <% products.forEach(product => {%>
+                                  <%- include('partials/product', {product}) %>
+                          <%})%>
+                          <%}else{%>
+                              <p>No se encontraron productos</p>
+                          <% } %>
                         </div>
                     </article>
                 </section>

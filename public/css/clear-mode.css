@@ -111,21 +111,19 @@ header {
 
     div#search-container form#search-form div#search-box input.form-control#casillero {
         border: none;
-        margin-right: 20px;
         padding-right: 0px;
     }
 
     div#search-box button.icon-box {
         background-color: white;
         padding-right: 0px;
-        margin-left: 40px;
+        /*margin-left: 40px;*/
         text-align: rigth;
 
     }
 
 
         button.icon-box i.fa-search {
-            margin-left: 20px;
             text-align: center;
             color: black;
             text-decoration: none;
