@@ -47,10 +47,10 @@
                 </div>
                   <br>
 
-                <section>
+                <section class="container px-5">
                     <h2>Los más comprados</h2>
-                    <article class="news">
-                        <div class="detail">
+                    <article class="news container ">
+                        <div class="detail d-flex flex-wrap flex-row">
                             <% if(locals && locals.products) {%>
                                 <% products.forEach(product => {%>
                                     <%- include('partials/product', {product}) %>
@@ -62,7 +62,7 @@
                     </article>
                 </section>
                 <br>
-                <section>
+                <section class="container px-5">
                     <h2>Nuestras Marcas</h2>
                     <article class="brand-container">
                         <div class="our-brands">
@@ -77,10 +77,10 @@
                     </article>
                 </section>
                 <br>
-                <section>
+                <section class="container px-5">
                     <h2>Populares</h2>
                     <article class="populars">
-                        <div class="gallery-container">
+                        <div class="gallery-container ">
                             <% if(locals && locals.products){ %>
                                 <% products.forEach(product => { %>
                                     <%- include('partials/product', { product })%>

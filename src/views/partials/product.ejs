@@ -1,27 +1,19 @@
 
-    <!--<div class="pic1 py-3">
-        <a href="/products/<%= product.id %>">
-            <img src="../images/<%= product.image %>" alt="<%= product.name %>">
-            <p class="price fw-bold">$ <%= product.price %></p>
-            <p class="detail-prod py-2"><%= product.name %></p>
-        </a>
-    </div>-->
-
     <!-- Top to bottom-->
-<div class="row">
-    <div class="col-6 d-flex mx-4">
-   
-      <!-- normal -->
-      <div class="grid">
-        <a id="" href="/products/<%= product.id %>">
-            <figure class="effect effect-oscar" id="effect-product" style="height: 380px; width: 360px">
-                <img class="img-prod" src="../images/<%= product.image %>" alt="img01"/>
-                <figcaption>
-                    <h2 id="h2-prod"><span class="legend"><%= product.name %></span></h2>
-                    <p class="price">$ <%= product.price %></p>
-                </figcaption>			
-            </figure>
-        </a>
-        <!-- ... -->
-        
-    </div>
+    <div class="">
+        <div class="col d-flex mx-3">
+       
+          <!-- normal -->
+          <div class="grid">
+            <a id="" href="/products/<%= product.id %>">
+                <figure class="effect effect-oscar" id="effect-product" style="height: 320px; width: 320px">
+                    <img class="img-prod text-center" src="../images/<%= product.image %>" alt="img01"/>
+                    <figcaption>
+                        <h2 id="h2-prod"><span class="legend"><%= product.name %></span></h2>
+                        <p class="price">$ <%= product.price %></p>
+                    </figcaption>			
+                </figure>
+            </a>
+            <!-- ... -->
+            
+        </div>
