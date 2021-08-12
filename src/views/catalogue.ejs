@@ -3,11 +3,11 @@
 <%- include('partials/head') %>
     <body>
         <%- include('partials/header') %>
-        <main style="margin-top: 140px">
-                <section>
+        <main style="margin-top: 130px">
+                <section class="container px-1">
                     <h2>Catálogo de Productos</h2>
-                    <article class="news">
-                        <div class="detail">
+                    <article class="col-auto">
+                        <div class="col-sm-1 col-md-2 col-lg-3 d-flex flex-row collapse">
                             <% if(locals && locals.products) {%>
                                 <% products.forEach(product => {%>
                                     <%- include('partials/product', {product}) %>

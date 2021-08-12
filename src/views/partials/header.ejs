@@ -1,5 +1,5 @@
 <header>
-    <section class="navbar navbar-expand-lg shadow fixed-top search-logo-container" style="background-color: #180a41;">
+    <section class="navbar navbar-expand-md shadow fixed-top search-logo-container" style="background-color: #180a41;">
         <div>
             <div class="container-fluid ms-5 ps-2 my-3">
                 <a class="navbar-brand" href="#">
@@ -7,33 +7,44 @@
                 </a>
             </div>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <button class="navbar-toggler" 
+          type="button" 
+          data-toggle="collapse" 
+          data-target="#navbarSupportedContent" 
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
         <div style="font-family: 'Chakra Petch';" class="collapse navbar-collapse text-light" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link text-light" aria-current="page" href="/" id="header-links">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/products/catalogue" id="header-links">Catálogo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/users/register" id="header-links">Registrate</a>
-              </li>
-              <li class="nav-item" id="header-links">
-                <a class="nav-link text-light" href="/users/login" id="header-links">Login</a>
-              </li>
-              <li class="nav-item" id="header-links">
-                <a class="nav-link text-light" href="#" id="header-links">
-                    <i class="fas fa-heart heart"></i></a>
-              </li>
-              <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link text-light nav-link dropdown-toggle" href="/products/productCart" id="header-rounded">
-                    <i class="fas fa-shopping-cart cart"></i>
-                    <span className="badge badge-pill badge-dange badge-counter">4</span>
-                </a>
-              </li>
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="/" id="header-links">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/products/catalogue" id="header-links">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/users/register" id="header-links">Registrate</a>
+                </li>
+                <li class="nav-item" id="header-links">
+                    <a class="nav-link text-light" href="/users/login" id="header-links">Login</a>
+                </li>
+                <li class="nav-item" id="header-links">
+                    <a class="nav-link text-light" href="#" id="header-links">
+                        <i class="fas fa-heart heart"></i></a>
+                </li>
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <a class="nav-link text-light nav-link dropdown-toggle" href="/products/productCart" id="header-rounded">
+                        <i class="fas fa-shopping-cart cart"></i>
+                        <span className="badge badge-pill badge-dange badge-counter">4</span>
+                    </a>
+                </li>
+                <% if(locals.isLogged && userLogged.userCategoryId != 2) { %>
+                    <li class="nav-item" id="header-links">
+                        <a class="nav-link text-light" id="header-links" href="/products/create">Crear Producto</a>
+                    </li>
+                <% } %>
             </ul>
             <div class="container-fluid" id="search-container">
                 <form class="d-flex" action="/products/search" method="GET" target="_blank" id="search-form">
@@ -57,12 +68,8 @@
                             <a href="/users/logout" id="header-links">Salir</a></li>
                         <li class="ms-2 nav-item">
                             <a href="#" id="header-links" class="nav-link dropdown-toggle" id="userDropdown">
-                            <img class="img-profile rounded-circle" src="/../images/avatars/<%= userLogged.avatar %>" alt="Avatar usuario" width="60"><!--Hi <%= locals.userLogged.name%>--></a></li>
-                        <!--<li class="secciones"><a href="/products/create">Crear Producto</a></li>-->
+                            <img class="img-profile rounded-circle" src="/../images/avatars/<%= userLogged.avatar %>" alt="Avatar usuario" width="60"></a></li>
                         <% } %>
-                    <% if(locals.isLogged && userLogged.userCategoryId != 2) { %>
-                        <li class="secciones"><a href="/products/create">Crear Producto</a></li>
-                    <% } %>
                 </ul>
             </nav>
     </section>
