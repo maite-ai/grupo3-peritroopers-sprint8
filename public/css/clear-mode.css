@@ -15,6 +15,39 @@ body {
     color: red;
 }
 
+
+figure.effect#effect-product p.price {
+    background-color: transparent;
+    font-size: 24px;
+    color:#180A41;
+    font-weight: bold;
+    text-shadow: 4px 2px 6px white;
+}
+
+figcaption h2#h2-prod {
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    font-weight: normal;
+}
+
+i.fas-plusminus {
+    color: white;
+    background: #283c86;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 8px;
+    padding: 8px;
+}
+div.input-productDet input.detail {
+    margin: 0;
+    padding-left: 7px;
+    width: 30px;
+    height: 30px;
+}
+
+
+
 /* HEADER ======================================================== */
 
 header {
